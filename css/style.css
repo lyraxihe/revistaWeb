@@ -1,2 +1,221 @@
 
+/* ######################################################### */
+/* VARIABLES */
 
+:root
+{
+    /* ----------------------------------------------------- */
+    /* Body variables */
+    --body_backgroundTopColor     : rgba(10, 7, 14, 1);
+    --body_backgroundBottomColor  : rgba(29, 19, 92, 1);
+
+    /* Header variables */
+    --header_height               : 6rem;
+    --header_width                : 160px;
+    --header_backgroundColor: white;
+
+    --menuItem_hoverColor         : rgb(255, 212, 42);
+    --menuItem_width              : 100px;
+    --menuItem_lineHeight         : 4px;
+    --menuItem_transitionTime     : 0.3s;
+    /* ----------------------------------------------------- */
+}
+/* ######################################################### */
+
+/* ######################################################### */
+/* ************ */
+/* * BASE WEB * */
+/* ************ */
+
+*
+{
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    scroll-behavior: smooth;
+    font-family    : Arial, Helvetica, sans-serif;
+}
+/* ######################################################### */
+
+/* ######################################################### */
+/* ******** */
+/* * BODY * */
+/* ******** */
+
+body
+{
+    background: linear-gradient(to bottom, var(--body_backgroundTopColor), var(--body_backgroundBottomColor));
+    height: 100vh;
+}
+/* ######################################################### */
+
+/* ######################################################### */
+/* ********** */
+/* * HEADER * */
+/* ********** */
+
+/* ========================================================= */
+/* TOP MENU */
+
+#menu
+{
+    background-color: white;
+    height          : var(--header_height);
+
+    display         : flex;
+    justify-content : space-around;
+}
+
+#menu div
+{
+    height  : 100%;
+    width   : var(--header_width);
+    padding : 10px;
+
+    position: relative
+}
+
+#menu a
+{
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------- */
+/* MENU LOGO */
+
+#menu div img
+{
+    position: absolute;
+    top       : 50%;
+    left      : 50%;
+    transform : translate(-50%, -50%);
+
+    max-height: calc(100% - 20px);
+    max-width : calc(100% - 20px);
+    object-fit: contain;
+}
+/* --------------------------------------------------------- */
+
+/* --------------------------------------------------------- */
+/* MENU ITEMS */
+
+#menu .menu_flex
+{
+    height  : 100%;
+    
+    list-style      : none;
+    
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    gap             : 10px;
+}
+
+#menu .menu_flex li
+{
+    height: 100%;
+    width : var(--menuItem_width);
+}
+
+#menu .menu_flex a
+{
+    color          : var(--body_backgroundBottomColor);
+    font-weight    : bold;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    height         : 100%;
+    position       : relative;
+
+    transition     : color var(--menuItem_transitionTime);
+}
+
+/* -------------------------------------------------- */
+/* Menu item lines */
+#menu .menu_flex a::before,
+#menu .menu_flex a::after
+{
+    content         : "";
+    position        : absolute;
+    left            : 50%;
+    width           : 0%;
+    height          : var(--menuItem_lineHeight);
+    background-color: var(--menuItem_hoverColor);
+
+    transform       : translateX(-50%);
+    transform-origin: center;
+    
+    transition      : width var(--menuItem_transitionTime) ease-in-out;
+}
+
+#menu .menu_flex a::before
+{
+    top: 0;
+}
+
+#menu .menu_flex a::after
+{
+    bottom: 0;
+}
+/* -------------------------------------------------- */
+
+/* -------------------------------------------------- */
+/* Menu item Hover */
+#menu .menu_flex a.hover_menuItem
+{
+    color: var(--menuItem_hoverColor);
+}
+
+#menu .menu_flex a.hover_menuItem::before,
+#menu .menu_flex a.hover_menuItem::after
+{
+    width: 100%;
+}
+/* -------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* --------------------------------------------------------- */
+/* MENU SUSCRIBE BUTTON */
+
+.suscribeButton
+{
+    box-shadow      : 0px 0px 0px 2px var(--body_backgroundBottomColor);
+	background-color:var(--body_backgroundBottomColor);
+	border-radius   :42px;
+	display         :inline-block;
+	cursor          :pointer;
+	color           :var(--header_backgroundColor);
+	font-family     :Arial;
+	font-size       :20px;
+	padding         :16px 32px;
+	text-decoration :none;
+
+    position        : absolute;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, -50%);
+
+    max-height      : calc(100% - 20px);
+    max-width       : calc(100% - 20px);
+    object-fit      : contain;
+}
+
+.suscribeButton.hover_Button {
+	background-color: var(--header_backgroundColor);
+    color           : var(--body_backgroundBottomColor);
+
+    transition      : var(--menuItem_transitionTime) ease-in-out;
+}
+
+/* --------------------------------------------------------- */
+/* ========================================================= */
+/* ######################################################### */
+
+/* ######################################################### */
+/* ******** */
+/* * MAIN * */
+/* ******** */
+
+/* ######################################################### */
