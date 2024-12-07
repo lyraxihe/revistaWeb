@@ -1,6 +1,8 @@
 
 /* ######################################################### */
-/* VARIABLES */
+/* ************* */
+/* * VARIABLES * */
+/* ************* */
 
 :root
 {
@@ -12,12 +14,16 @@
     /* Header variables */
     --header_height               : 6rem;
     --header_width                : 160px;
-    --header_backgroundColor: white;
+    --header_backgroundColor      : white;
 
     --menuItem_hoverColor         : rgb(255, 212, 42);
     --menuItem_width              : 100px;
     --menuItem_lineHeight         : 4px;
     --menuItem_transitionTime     : 0.3s;
+
+    /* Footer variables */
+    --footer_height               : 24rem;
+    --logo_transitionTime         : 0.2s;
     /* ----------------------------------------------------- */
 }
 /* ######################################################### */
@@ -46,6 +52,10 @@ body
 {
     background: linear-gradient(to bottom, var(--body_backgroundTopColor), var(--body_backgroundBottomColor));
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
 }
 /* ######################################################### */
 
@@ -75,6 +85,11 @@ body
     position: relative
 }
 
+#menu div .menuButton
+{
+    display: none;
+}
+
 #menu a
 {
     text-decoration: none;
@@ -85,7 +100,7 @@ body
 
 #menu div img
 {
-    position: absolute;
+    position  : absolute;
     top       : 50%;
     left      : 50%;
     transform : translate(-50%, -50%);
@@ -119,7 +134,7 @@ body
 
 #menu .menu_flex a
 {
-    color          : var(--body_backgroundBottomColor);
+    color          : var(--body_backgroundTopColor);
     font-weight    : bold;
 
     display        : flex;
@@ -134,7 +149,7 @@ body
 
 /* -------------------------------------------------- */
 /* Menu item lines */
-#menu .menu_flex a::before,
+/* #menu .menu_flex a::before, */
 #menu .menu_flex a::after
 {
     content         : "";
@@ -150,10 +165,10 @@ body
     transition      : width var(--menuItem_transitionTime) ease-in-out;
 }
 
-#menu .menu_flex a::before
+/* #menu .menu_flex a::before
 {
     top: 0;
-}
+} */
 
 #menu .menu_flex a::after
 {
@@ -181,15 +196,15 @@ body
 
 .suscribeButton
 {
-    box-shadow      : 0px 0px 0px 2px var(--body_backgroundBottomColor);
-	background-color:var(--body_backgroundBottomColor);
+    box-shadow      : 0px 0px 0px 3px var(--body_backgroundTopColor);
+	background-color:var(--body_backgroundTopColor);
 	border-radius   :42px;
 	display         :inline-block;
 	cursor          :pointer;
 	color           :var(--header_backgroundColor);
 	font-family     :Arial;
 	font-size       :20px;
-	padding         :16px 32px;
+	padding         :10px 30px;
 	text-decoration :none;
 
     position        : absolute;
@@ -200,13 +215,14 @@ body
     max-height      : calc(100% - 20px);
     max-width       : calc(100% - 20px);
     object-fit      : contain;
-}
-
-.suscribeButton.hover_Button {
-	background-color: var(--header_backgroundColor);
-    color           : var(--body_backgroundBottomColor);
 
     transition      : var(--menuItem_transitionTime) ease-in-out;
+}
+
+.suscribeButton.hover_suscribeButton
+{
+	background-color: var(--header_backgroundColor);
+    color           : var(--body_backgroundBottomColor);
 }
 
 /* --------------------------------------------------------- */
@@ -218,4 +234,248 @@ body
 /* * MAIN * */
 /* ******** */
 
+main
+{
+    flex-grow: 1;
+}
+/* ######################################################### */
+
+/* ######################################################### */
+/* ********** */
+/* * FOOTER * */
+/* ********** */
+
+footer
+{
+    background-color: var(--menuItem_hoverColor);
+    height          : var(--footer_height);
+
+    display         : flex;
+    justify-content : center;
+    align-items     : baseline;
+    gap: 20%;
+
+    padding         : 20px;
+
+    color: var(--body_backgroundBottomColor);
+}
+
+footer h1
+{
+    font-size: 1.5em;
+}
+
+footer h2
+{
+    font-size: 1em;
+}
+
+footer .footerLeft
+{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    gap            : 40px;
+}
+
+footer .footerLeft .footerLeftInfo
+{
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items    : baseline;
+    gap            : 100px;
+}
+
+footer .footerLeft .footerLeftLocation
+{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : baseline;
+    gap            : 10px;
+}
+
+/* ========================================================= */
+/* SOCIAL MEDIA*/
+
+footer .socialMedia
+{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    gap            : 30px;
+    align-items    : center;
+}
+
+/* --------------------------------------------------------- */
+/* Social Media logos*/
+
+footer .socialMedia .socialMedia_logos
+{
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+    gap            : 40px;
+
+    width          : 100%;
+    max-width      : 200px;
+}
+
+footer .socialMedia a
+{
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+footer .socialMedia a img
+{
+    max-width : 40px;
+    max-height: 40px;
+    object-fit: contain;
+    transition: var(--logo_transitionTime) ease-in-out;
+}
+
+footer .socialMedia a img.hover_socialMediaLogo
+{
+    transform: scale(1.2);
+}
+/* --------------------------------------------------------- */
+/* ========================================================= */
+
+/* ========================================================= */
+/* POLICY */
+
+footer .policy
+{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    gap            : 20px;
+}
+/* ========================================================= */
+
+/* ========================================================= */
+/* COPYRIGHT */
+
+.footer-divider
+{
+    border          : 0;
+    height          : 2px;
+    background-color: var(--body_backgroundBottomColor);
+}
+
+footer .copyright
+{
+    text-align: center;
+    color     : var(--body_backgroundBottomColor);
+    font-size : 14px;
+    padding   : 10px 0;
+}
+/* ========================================================= */
+
+/* ========================================================= */
+/* CONTACT US */
+
+footer .contactUs
+{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    gap            : 20px;
+    align-items    : center;
+}
+
+/* --------------------------------------------------------- */
+/* Form */
+footer .contactUs .contactUs_form
+{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    gap            :10px;
+}
+/* --------------------------------------------------------- */
+
+/* --------------------------------------------------------- */
+/* Form's fields */
+footer .contactUs .contactUs_form .nameText_input,
+footer .contactUs .contactUs_form .emailText_input,
+footer .contactUs .contactUs_form .messageText_input
+{
+    color           : var(--body_backgroundBottomColor);
+    font-family     : Arial, Helvetica, sans-serif;
+    font-weight     : 500;
+    font-size       : 16px;
+    border-radius   : 6px;
+    line-height     : 22px;
+    background-color: transparent;
+    border          : 2px solid var(--body_backgroundBottomColor);
+    transition      : all 0.3s;
+    padding         : 6px;
+    width           : 150%;
+    box-sizing      : border-box;
+    outline         : 0;
+}
+
+footer .contactUs .contactUs_form .input_focus
+{
+    border: 2px solid var(--header_backgroundColor);
+}
+
+.contactUs_form textarea
+{
+    height     : 150px;
+    line-height: 150%;
+    resize     : vertical;
+}
+/* --------------------------------------------------------- */
+
+/* --------------------------------------------------------- */
+/* Form's Send Message Button */
+.sendMessageButton
+{
+    box-shadow      : 0px 0px 0px 3px var(--body_backgroundBottomColor);
+	background-color:var(--body_backgroundBottomColor);
+	border-radius   :42px;
+	display         :inline-block;
+	cursor          :pointer;
+	color           :var(--header_backgroundColor);
+	font-family     :Arial;
+	font-size       :20px;
+	padding         :10px 30px;
+	text-decoration :none;
+
+    transition      : var(--menuItem_transitionTime) ease-in-out;
+}
+
+.sendMessageButton.hover_sendMessageButton
+{
+	background-color: var(--menuItem_hoverColor);
+    color           : var(--body_backgroundBottomColor);
+}
+/* --------------------------------------------------------- */
+/* ========================================================= */
+/* ######################################################### */
+
+/* ######################################################### */
+/* *************** */
+/* * MEDIA QUERY * */
+/* *************** */
+
+@media screen and (max-width: 768px)
+{
+    #menu .menu_flex, .suscribeButton
+    {
+        display: none;
+    }
+
+    .menuButton {
+        display: block;
+        cursor: pointer;
+    }
+}
 /* ######################################################### */
