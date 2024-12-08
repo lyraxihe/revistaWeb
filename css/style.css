@@ -85,9 +85,15 @@ body
     position: relative
 }
 
-#menu div .menuButton
+.menuButton
 {
     display: none;
+}
+
+.menuButton img
+{
+    width  : 50px;
+    height : 50px;
 }
 
 #menu a
@@ -281,19 +287,9 @@ footer .footerLeft
 footer .footerLeft .footerLeftInfo
 {
     display        : flex;
-    flex-direction : row;
     justify-content: center;
     align-items    : baseline;
     gap            : 100px;
-}
-
-footer .footerLeft .footerLeftLocation
-{
-    display        : flex;
-    flex-direction : column;
-    justify-content: center;
-    align-items    : baseline;
-    gap            : 10px;
 }
 
 /* ========================================================= */
@@ -354,6 +350,19 @@ footer .policy
     justify-content: center;
     align-items    : center;
     gap            : 20px;
+}
+/* ========================================================= */
+
+/* ========================================================= */
+/* LOCATION */
+
+footer .footerLeft .footerLeftLocation
+{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    gap            : 10px;
 }
 /* ========================================================= */
 
@@ -466,16 +475,45 @@ footer .contactUs .contactUs_form .input_focus
 /* * MEDIA QUERY * */
 /* *************** */
 
+@media screen and (max-width: 965px)
+{
+    footer
+    {
+        height        : auto;
+        padding       : 20px 0;
+
+        flex-direction: column-reverse;
+        align-items   : center;
+        gap           : 40px;
+    }
+}
+
 @media screen and (max-width: 768px)
 {
+    #menu
+    {
+        justify-content : space-between;
+    }
+    
     #menu .menu_flex, .suscribeButton
     {
         display: none;
     }
 
-    .menuButton {
+    .menuButton
+    {
         display: block;
-        cursor: pointer;
+        cursor : pointer;
+    }
+}
+
+@media screen and (max-width: 480px)
+{
+    footer .footerLeft .footerLeftInfo
+    {
+        flex-direction: column;
+        align-items   : center;
+        gap           : 40px;
     }
 }
 /* ######################################################### */
