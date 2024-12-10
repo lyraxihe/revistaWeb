@@ -132,6 +132,13 @@ body
     gap             : 10px;
 }
 
+/* -------------------------------------------------- */
+/* Show Menu Flex when resolution is low */
+#menu .menu_flex.showMenuFlex {
+    top: 0;
+}
+/* -------------------------------------------------- */
+
 #menu .menu_flex li
 {
     height: 100%;
@@ -231,6 +238,87 @@ body
     color           : var(--body_backgroundBottomColor);
 }
 
+/* --------------------------------------------------------- */
+
+/* --------------------------------------------------------- */
+/* MENU SUSCRIBE */
+
+.suscribeForm
+{
+    display         : none;
+    overflow        : hidden;
+
+    background-color: white;
+    height          : 0;
+    max-width       : 480px;
+
+    padding         : 0 10px;
+    margin          : 0 auto;
+
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
+    gap             : 15px;
+
+    transition: height var(--menuItem_transitionTime), padding var(--menuItem_transitionTime) ease;
+}
+
+.suscribeForm.showMenuSuscribe
+{
+    display: flex;
+    height : 200px;
+    padding: 40px;
+}
+
+.suscribeForm .suscribeEmailText_input,
+.suscribeForm .passwordText_input
+{
+    color           : var(--body_backgroundBottomColor);
+    font-family     : Arial, Helvetica, sans-serif;
+    font-weight     : 500;
+    font-size       : 16px;
+    border-radius   : 6px;
+    line-height     : 22px;
+    background-color: transparent;
+    border          : 2px solid var(--body_backgroundBottomColor);
+    transition      : all 0.3s;
+    padding         : 6px;
+    width           : 100%;
+    box-sizing      : border-box;
+    outline         : 0;
+}
+
+.suscribeForm .input_focus
+{
+    border: 2px solid var(--header_backgroundColor);
+}
+
+.logInButton
+{
+    box-shadow      : 0px 0px 0px 3px var(--body_backgroundTopColor);
+	background-color:var(--body_backgroundTopColor);
+	border-radius   :42px;
+	display         :inline-block;
+	cursor          :pointer;
+	color           :var(--header_backgroundColor);
+	font-family     :Arial;
+	font-size       :20px;
+	padding         :10px 30px;
+	text-decoration :none;
+
+    max-height      : calc(100% - 20px);
+    max-width       : calc(100% - 20px);
+    object-fit      : contain;
+
+    transition      : var(--menuItem_transitionTime) ease-in-out;
+}
+
+.logInButton.hover_logInButton
+{
+	background-color: var(--header_backgroundColor);
+    color           : var(--body_backgroundBottomColor);
+}
 /* --------------------------------------------------------- */
 /* ========================================================= */
 /* ######################################################### */
@@ -495,9 +583,20 @@ footer .contactUs .contactUs_form .input_focus
         justify-content : space-between;
     }
     
-    #menu .menu_flex, .suscribeButton
+    #menu .menu_flex
     {
-        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: var(--header_backgroundColor);
+
+        position: fixed;
+        width: 100%;
+        height: 50vh;
+        top: -100%;
+        left: 0;
+        padding: 50px;
+        transition: var(--logo_transitionTime);
     }
 
     .menuButton
@@ -514,6 +613,11 @@ footer .contactUs .contactUs_form .input_focus
         flex-direction: column;
         align-items   : center;
         gap           : 40px;
+    }
+
+    .suscribeForm
+    {
+        max-width: 100%;
     }
 }
 /* ######################################################### */

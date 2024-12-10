@@ -1,6 +1,6 @@
 
 $(document).ready(function()
-{
+{   
     /* ========================================================= */
     // HEADER
 
@@ -20,6 +20,76 @@ $(document).ready(function()
     {
         suscribeButton.toggleClass("hover_suscribeButton");
     })
+    /* --------------------------------------------------------- */
+
+    /* --------------------------------------------------------- */
+    // suscribeForm
+
+    // Suscribe Button
+    let suscribeForm   = $(".suscribeForm");
+    suscribeButton.click(function(event)
+    {
+        event.stopPropagation();
+        
+        suscribeForm[0].reset();
+        suscribeForm   .toggleClass('showMenuSuscribe');
+        menuFlex       .removeClass('showMenuFlex');
+    });
+
+    // LogIn Button
+    $(".logInButton").click(function()
+    {
+        let suscribeEmailText = $(".suscribeEmailText_input").val().trim();
+        let passwordText = $(".passwordText_input").val().trim();
+
+        if (suscribeEmailText === "" || passwordText === "")
+        {
+            alert("ERROR.\nPlease, fill all the fields before logging in.");
+        }
+        else
+        {
+            alert("Log In successfully");
+        }
+
+        suscribeForm[0].reset();
+
+        suscribeForm.removeClass('showMenuSuscribe');
+    });
+
+    // Form's fields
+    $(".suscribeForm input").focus(function() {
+        $(this).addClass("input_focus");
+    });
+    
+    $(".suscribeForm input").blur(function() {
+        $(this).removeClass("input_focus");
+    });
+
+    // LogIn Button
+    let logInButton = $(".logInButton");
+    logInButton.hover(function()
+    {
+        suscribeForm[0].reset();
+        logInButton.toggleClass("hover_logInButton");
+    });
+
+    // Click fuera del formulario
+    $(document).click(function(event) {
+        if (!$(event.target).closest(".suscribeForm, .suscribeButton").length) {
+            $(".suscribeForm").removeClass("showMenuSuscribe");
+        }
+    });
+    /* --------------------------------------------------------- */
+
+    /* --------------------------------------------------------- */
+    // Menu Button (low resolution)
+    let menuButton = $(".menuButton");
+    let menuFlex   = $(".menu_flex");
+
+    menuButton.click(function()
+    {
+        menuFlex.toggleClass('showMenuFlex');
+    });
     /* --------------------------------------------------------- */
 
     /* --------------------------------------------------------- */
