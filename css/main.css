@@ -55,7 +55,7 @@ body
 
     display: flex;
     flex-direction: column;
-
+    overflow: hidden;
 }
 /* ######################################################### */
 
@@ -296,28 +296,28 @@ body
 
 .logInButton
 {
-    box-shadow      : 0px 0px 0px 3px var(--body_backgroundTopColor);
-	background-color:var(--body_backgroundTopColor);
-	border-radius   :42px;
-	display         :inline-block;
-	cursor          :pointer;
-	color           :var(--header_backgroundColor);
-	font-family     :Arial;
-	font-size       :20px;
-	padding         :10px 30px;
-	text-decoration :none;
+    box-shadow       : 0px 0px 0px 3px var(--body_backgroundTopColor);
+	background-color : var(--body_backgroundTopColor);
+	border-radius    : 42px;
+	display          : inline-block;
+	cursor           : pointer;
+	color            : var(--header_backgroundColor);
+	font-family      : Arial;
+	font-size        : 20px;
+	padding          : 10px 30px;
+	text-decoration  : none;
 
-    max-height      : calc(100% - 20px);
-    max-width       : calc(100% - 20px);
-    object-fit      : contain;
+    max-height       : calc(100% - 20px);
+    max-width        : calc(100% - 20px);
+    object-fit       : contain;
 
-    transition      : var(--menuItem_transitionTime) ease-in-out;
+    transition       : var(--menuItem_transitionTime) ease-in-out;
 }
 
 .logInButton.hover_logInButton
 {
-	background-color: var(--header_backgroundColor);
-    color           : var(--body_backgroundBottomColor);
+	background-color : var(--header_backgroundColor);
+    color            : var(--body_backgroundBottomColor);
 }
 /* --------------------------------------------------------- */
 /* ========================================================= */
@@ -347,11 +347,12 @@ footer
     display         : flex;
     justify-content : center;
     align-items     : baseline;
-    gap: 20%;
+    gap             : 20%;
 
     padding         : 20px;
 
     color: var(--body_backgroundBottomColor);
+    flex-shrink: 0;
 }
 
 footer h1
@@ -621,3 +622,38 @@ footer .contactUs .contactUs_form .input_focus
     }
 }
 /* ######################################################### */
+
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Oculta el desbordamiento de la caja principal */
+}
+
+.sidebar {
+    width: 20%;
+    overflow-y: auto; /* Scroll vertical independiente */
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.main-content {
+    width: 60%;
+    overflow-y: auto; /* Scroll vertical independiente */
+    padding: 10px;
+    background-color: #fff;
+}
+
+.vertical-box {
+    margin-bottom: 20px;
+}
+
+.vertical-box img {
+    width: 100%;
+}
+
+.item {
+    list-style: none;
+}
+
+
