@@ -597,18 +597,18 @@ footer .contactUs .contactUs_form .input_focus
     
     #menu .menu_flex
     {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        flex-direction  : column;
+        align-items     : center;
+        gap             : 20px;
         background-color: var(--header_backgroundColor);
 
-        position: fixed;
-        width: 100%;
-        height: 50vh;
-        top: -100%;
-        left: 0;
-        padding: 50px;
-        transition: var(--logo_transitionTime);
+        position        : fixed;
+        width           : 100%;
+        height          : 50vh;
+        top             : -100%;
+        left            : 0;
+        padding         : 50px;
+        transition      : var(--logo_transitionTime);
     }
 
     .menuButton
