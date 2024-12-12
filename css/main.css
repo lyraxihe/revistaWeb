@@ -339,10 +339,47 @@ header
 /* * MAIN * */
 /* ******** */
 
-main
-{
-    flex-grow: 1;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ######################################################### */
 
 /* ######################################################### */
@@ -364,6 +401,7 @@ footer
 
     color: var(--body_backgroundBottomColor);
     flex-shrink: 0;
+    position: relative;
 }
 
 footer h1
@@ -634,37 +672,53 @@ footer .contactUs .contactUs_form .input_focus
 }
 /* ######################################################### */
 
-.main-container {
-    display: flex;
+.main-container 
+{ 
+    display: flex; 
+    justify-content: center; 
+}
+
+.main-content
+{
     flex: 1;
-    overflow: hidden; /* Oculta el desbordamiento de la caja principal */
+    padding: 10px; 
+    padding-top: var(--header_height);
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
 }
 
-.sidebar {
-    width: 20%;
-    overflow-y: auto; /* Scroll vertical independiente */
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-right: 1px solid #ccc;
+.sidebar 
+{
+    margin-top: var(--header_height);
+    margin: 10px;
+    position: sticky; /* Mantiene la sidebar fija mientras se hace scroll */
+    top: var(--header_height); /* Ajuste para la altura del header */
+    width: 250px; /* Fija el ancho de la sidebar */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    height: calc(100vh - var(--header_height)); /* Ajuste para asegurar que la sidebar ocupe toda la altura restante */
+    /* overflow-y: auto; Permite el scroll dentro de la sidebar si es necesario */
 }
 
-.main-content {
-    width: 60%;
-    overflow-y: auto; /* Scroll vertical independiente */
-    padding: 10px;
-    background-color: #fff;
-}
-
-.vertical-box {
+.vertical-box 
+{
     margin-bottom: 20px;
 }
 
-.vertical-box img {
+.vertical-box img 
+{
     width: 100%;
+    height: auto;
 }
 
 .item {
-    list-style: none;
+    list-style: none; /* Quita los puntos de la lista */
+    text-decoration: underline; /* Subraya el texto */
+    cursor: pointer; /* Cambia el cursor al estilo de mano como los enlaces */
+    margin-bottom: 10px; /* Añade espacio entre los ítems */
 }
+
 
 
