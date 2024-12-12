@@ -50,12 +50,8 @@
 
 body
 {
-    background: linear-gradient(to bottom, var(--body_backgroundTopColor), var(--body_backgroundBottomColor));
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    background           : linear-gradient(to bottom, var(--body_backgroundTopColor), var(--body_backgroundBottomColor));
+    background-attachment: fixed;
 }
 /* ######################################################### */
 
@@ -67,10 +63,20 @@ body
 /* ========================================================= */
 /* TOP MENU */
 
+header
+{
+    position: sticky;
+    top     : 0;
+}
+
 #menu
 {
-    background-color: white;
+    position        : absolute;
+    z-index         : 10;
+
+    background-color: var(--header_backgroundColor);
     height          : var(--header_height);
+    width           : 100%;
 
     display         : flex;
     justify-content : space-around;
@@ -247,28 +253,33 @@ body
 {
     display         : none;
     overflow        : hidden;
+    z-index         : 9;
 
-    background-color: white;
-    height          : 0;
+    position        : absolute;
+    transform       : translate(-50%, -100%);
+    left            : 50%;
+    top             : 0;
+
+    background-color: var(--header_backgroundColor);
+    height          : 16rem;
     max-width       : 480px;
 
-    padding         : 0 10px;
+    padding         : 40px;
     margin          : 0 auto;
 
     display         : flex;
     flex-direction  : column;
     justify-content : center;
     align-items     : center;
-    gap             : 15px;
+    gap             : 25px;
 
-    transition: height var(--menuItem_transitionTime), padding var(--menuItem_transitionTime) ease;
+    transition: var(--menuItem_transitionTime) ease;
 }
 
 .suscribeForm.showMenuSuscribe
 {
     display: flex;
-    height : 200px;
-    padding: 40px;
+    top    : 22rem;
 }
 
 .suscribeForm .suscribeEmailText_input,
