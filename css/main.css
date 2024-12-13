@@ -22,9 +22,10 @@
     --menuItem_transitionTime    : 0.3s;
 
     /* Main variables */
-    --Main_backgroundColor     : rgb(220, 220, 220);
+    --Main_backgroundColor       : rgb(220, 220, 220);
 
     /* Index.html */
+    --mainPaddingSize            : 6rem;
     --slideShow_animationTime    : 30s;
 
     /* Footer variables */
@@ -73,6 +74,7 @@ header
 {
     position: sticky;
     top     : 0;
+    z-index : 9999;
 }
 
 #menu
@@ -363,93 +365,77 @@ header
 
 main
 {
-    padding-top   : 6rem;
-    padding-bottom: 6rem;
+    padding: var(--mainPaddingSize) 0;
+
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-direction : column;
+    gap            : 2rem;
+
+    overflow       : hidden;
 }
 
-/* --------------------------------------------------------- */
-/* Slideshow general style */
-
-.slideshow-container
+.infiniteSlideShow
 {
-    position     : relative;
-    overflow     : hidden;
-    width        : 100%;
-    margin-bottom: 2rem;
+    white-space: nowrap;
 }
 
-.slideshow
+.infiniteSlideShow_left
 {
-    display: flex;
-    gap    : 15px;
+    display  : inline-block;
+    animation: var(--slideShow_animationTime) slideRightLeft infinite linear;
 }
 
-.slide-container
+.infiniteSlideShow_right
 {
-    display : flex;
-    gap     : 15px;
-    width   : max-content;
-    position: relative;
+    display  : inline-block;
+    animation: var(--slideShow_animationTime) slideLeftRight infinite linear;
 }
 
-.slide-container.stopAnimation
+.infiniteSlideShow_left.stopAnimation,
+.infiniteSlideShow_right.stopAnimation
 {
     animation-play-state: paused;
 }
 
-.slideshow img
+.infiniteSlideShow_left img,
+.infiniteSlideShow_right img
 {
-    height    : auto;
-    transition: transform 0.3s ease-in-out;
+    position  : relative;
+    margin    : 0 10px;
+    transition: var(--logo_transitionTime) ease-in-out;
 }
 
-.slideshow img.hoverSlideShowImg
+.infiniteSlideShow_left img.hoverSlideShowImg,
+.infiniteSlideShow_right img.hoverSlideShowImg
 {
-    transform: scale(1.05);
-}
-/* --------------------------------------------------------- */
-
-/* --------------------------------------------------------- */
-/* First slideshow animation (right to left) */
-
-.slideshow-left .slide-container
-{
-    animation: slide-left var(--slideShow_animationTime)  linear infinite;
+    transform: scale(1.1);
 }
 
-@keyframes slide-left
+@keyframes slideRightLeft
 {
-    0%
+    from
     {
-        transform: translateX(0);
+        transform: translateX(50%);
     }
-    100%
+    to
     {
-        transform: translateX(-100%);
+        transform: translate(-50%);
     }
 }
-/* --------------------------------------------------------- */
 
-/* --------------------------------------------------------- */
-/* Second slideshow animation (left to right) */
-
-.slideshow-right .slide-container
+@keyframes slideLeftRight
 {
-    animation: slide-right var(--slideShow_animationTime) linear infinite;
-}
-
-@keyframes slide-right
-{
-    0%
+    from
     {
-        transform: translateX(0);
+        transform: translateX(-50%);
     }
-    100%
+    to
     {
-        transform: translateX(100%);
+        transform: translate(50%);
     }
 }
-/* --------------------------------------------------------- */
 /* ######################################################### */
 
 

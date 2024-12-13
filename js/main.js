@@ -152,11 +152,19 @@ $(document).ready(function()
     /* --------------------------------------------------------- */
     // sendMessageButton hover
 
-    let slideShowImgs = $(".slideshow img");
-    slideShowImgs.hover(function()
+    let slideShowLeftImgs = $(".infiniteSlideShow_left img");
+    slideShowLeftImgs.hover(function()
     {
         $(this).toggleClass("hoverSlideShowImg");
-        $(this).parent().toggleClass("stopAnimation");
+        $(".infiniteSlideShow_left").toggleClass("stopAnimation");
+
+    })
+
+    let slideShowRightImgs = $(".infiniteSlideShow_right img");
+    slideShowRightImgs.hover(function()
+    {
+        $(this).toggleClass("hoverSlideShowImg");
+        $(".infiniteSlideShow_right").toggleClass("stopAnimation");
 
     })
     /* --------------------------------------------------------- */
