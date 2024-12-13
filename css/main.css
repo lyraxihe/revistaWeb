@@ -363,7 +363,7 @@ header
 /* * MAIN * */
 /* ******** */
 
-main
+.mainIndex
 {
     padding: var(--mainPaddingSize) 0;
 
