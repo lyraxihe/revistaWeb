@@ -22,7 +22,7 @@
     --menuItem_transitionTime    : 0.3s;
 
     /* Main variables */
-    --Main_backgroundColor       : rgb(220, 220, 220);
+    --Main_backgroundColor       : rgb(220, 220, 220, 0.1);
 
     /* Index.html */
     --mainPaddingSize            : 6rem;
@@ -815,7 +815,7 @@ footer .contactUs .contactUs_form .input_focus
 
     #menu .menu_flex
     {
-        width           : 100%;
+        width: 100%;
     }
 
     .suscribeForm
@@ -827,6 +827,7 @@ footer .contactUs .contactUs_form .input_focus
 
 .main-container 
 { 
+    color          : white; 
     display        : flex; 
     justify-content: center; 
 }
@@ -837,6 +838,7 @@ main h2
     margin-bottom: 25px;
 }
 
+
 .main-content
 {
     flex            : 1;
@@ -844,6 +846,14 @@ main h2
     padding         : 1%; 
     border-radius   : 8px;
     background-color: var(--Main_backgroundColor);
+}
+
+.main-content h3
+{   
+    display        : flex;
+    font-size      : 40px;
+    margin-bottom  : 10px;
+    justify-content: center; 
 }
 
 .sidebar 
@@ -861,13 +871,14 @@ main h2
 
 .vertical-box 
 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .vertical-box img 
 {
-    width : 100%;
-    height: auto;
+    width        : 100%;
+    height       : auto;
+    margin-bottom: 10px;
 }
 
 .item 
@@ -879,29 +890,39 @@ main h2
     text-decoration: underline;
 }
 
-.custom-list {
-    list-style: none;
+.custom-list 
+{
+    list-style  : none;
     padding-left: 200px
 }
 
-.list-item {
-    display: flex;
-    align-items: flex-start;
+.list-item 
+{
+    display      : flex;
+    align-items  : flex-start;
     margin-bottom: 60px;
 }
 
-.number {
-    font-size: 2em;
-    font-weight: bold;
+.number 
+{
+    font-size   : 2em;
+    font-weight : bold;
     margin-right: 100px;
 }
 
-.content {
+.content 
+{
     max-width: 600px;
 }
 
-.title {
-    margin: 0 0 10px 0;
+.content img
+{
+    width: 100%;
+}
+
+.title 
+{
+    margin   : 0 0 10px 0;
     font-size: 1.5em;
 }
 
