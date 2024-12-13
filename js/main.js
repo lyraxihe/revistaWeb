@@ -152,7 +152,7 @@ $(document).ready(function()
     /* --------------------------------------------------------- */
     // sendMessageButton hover
 
-    let slideShowLeftImgs = $(".infiniteSlideShow_left img");
+    let slideShowLeftImgs = $(".infiniteSlideShow_left .image-container");
     slideShowLeftImgs.hover(function()
     {
         $(this).toggleClass("hoverSlideShowImg");
@@ -160,7 +160,7 @@ $(document).ready(function()
 
     })
 
-    let slideShowRightImgs = $(".infiniteSlideShow_right img");
+    let slideShowRightImgs = $(".infiniteSlideShow_right .image-container");
     slideShowRightImgs.hover(function()
     {
         $(this).toggleClass("hoverSlideShowImg");

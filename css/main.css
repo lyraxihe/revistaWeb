@@ -371,7 +371,7 @@ main
     justify-content: center;
     align-items    : center;
     flex-direction : column;
-    gap            : 2rem;
+    gap            : 1rem;
 
     overflow       : hidden;
 }
@@ -403,7 +403,6 @@ main
 .infiniteSlideShow_right img
 {
     position  : relative;
-    margin    : 0 10px;
     transition: var(--logo_transitionTime) ease-in-out;
 }
 
@@ -413,26 +412,100 @@ main
     transform: scale(1.1);
 }
 
+.image-container
+{
+    position     : relative;
+    display      : inline-block;
+    border-radius: 30px;
+    overflow     : hidden;
+    width        : 300px;
+    height       : 300px;
+}
+
+.image-container img
+{
+    display      : block;
+    height       : 100%;
+    width        : 100%;
+    object-fit   : cover;
+    border-radius: 30px;
+    transition   : transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.overlay
+{
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
+    opacity         : 0;
+    visibility      : hidden;
+    transition      : opacity 0.3s ease, visibility 0.3s ease;
+    white-space     : wrap;
+    text-align      : center;
+}
+
+.overlay p
+{
+    color     : var(--header_backgroundColor);
+    margin    : 5px 0;
+    text-align: center;
+    font-size : 1.2rem;
+}
+
+.overlay h2
+{
+    color     : var(--header_backgroundColor);
+    font-size : 2rem;
+}
+
+.image-container.hoverSlideShowImg .overlay
+{
+    opacity   : 1;
+    visibility: visible;
+}
+
+.image-container.hoverSlideShowImg img
+{
+    opacity  : 0.7;
+    transform: scale(1.1);
+}
+
+.image-container img
+{
+    object-fit: cover;
+}
+
+.infiniteSlideShow_left img,
+.infiniteSlideShow_right img
+{
+    position  : relative;
+    margin    : 0 10px;
+    transition: var(--logo_transitionTime) ease-in-out;
+}
+
 @keyframes slideRightLeft
 {
-    from
-    {
+    from {
         transform: translateX(50%);
     }
-    to
-    {
+    to {
         transform: translate(-50%);
     }
 }
 
 @keyframes slideLeftRight
 {
-    from
-    {
+    from {
         transform: translateX(-50%);
     }
-    to
-    {
+    to {
         transform: translate(50%);
     }
 }
