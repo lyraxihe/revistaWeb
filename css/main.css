@@ -22,6 +22,8 @@
     --menuItem_transitionTime    : 0.3s;
 
     /* Main variables */
+    --Main_backgroundColor     : rgb(220, 220, 220);
+
     /* Index.html */
     --slideShow_animationTime    : 30s;
 
@@ -694,6 +696,14 @@ footer .contactUs .contactUs_form .input_focus
         align-items   : center;
         gap           : 40px;
     }
+    /* .item 
+    {
+        font-size: 10px;
+    }
+    main h2
+    {
+        font-size: 35px;
+    } */
 }
 
 @media screen and (max-width: 768px)
@@ -728,6 +738,11 @@ footer .contactUs .contactUs_form .input_focus
         display: block;
         cursor : pointer;
     }
+    /* .item 
+    {
+        font-size: 8px;
+    } */
+
 }
 
 @media screen and (max-width: 480px)
@@ -753,32 +768,36 @@ footer .contactUs .contactUs_form .input_focus
 
 .main-container 
 { 
-    display: flex; 
+    display        : flex; 
     justify-content: center; 
+}
+
+main h2
+{
+    font-size    : 40px;
+    margin-bottom: 25px;
 }
 
 .main-content
 {
-    flex: 1;
-    padding: 10px; 
-    padding-top: var(--header_height);
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
+    flex            : 1;
+    margin          : 10px;
+    padding         : 1%; 
+    border-radius   : 8px;
+    background-color: var(--Main_backgroundColor);
 }
 
 .sidebar 
 {
-    margin-top: var(--header_height);
-    margin: 10px;
-    position: sticky; /* Mantiene la sidebar fija mientras se hace scroll */
-    top: var(--header_height); /* Ajuste para la altura del header */
-    width: 250px; /* Fija el ancho de la sidebar */
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 1rem;
-    border-radius: 8px;
-    height: calc(100vh - var(--header_height)); /* Ajuste para asegurar que la sidebar ocupe toda la altura restante */
-    /* overflow-y: auto; Permite el scroll dentro de la sidebar si es necesario */
+    top     : var(--header_height);
+    width   : 15%;
+    height  : calc(100vh - var(--header_height));
+    margin  : 10px;
+    z-index : -1;
+    padding : 1rem;
+    position: sticky;
+    border-radius   : 8px;
+    background-color: var(--Main_backgroundColor);
 }
 
 .vertical-box 
@@ -788,15 +807,43 @@ footer .contactUs .contactUs_form .input_focus
 
 .vertical-box img 
 {
-    width: 100%;
+    width : 100%;
     height: auto;
 }
 
-.item {
-    list-style: none; /* Quita los puntos de la lista */
-    text-decoration: underline; /* Subraya el texto */
-    cursor: pointer; /* Cambia el cursor al estilo de mano como los enlaces */
-    margin-bottom: 10px; /* Añade espacio entre los ítems */
+.item 
+{
+    cursor         : pointer;
+    font-size      : 20px;
+    list-style     : none;
+    margin-bottom  : 15px;
+    text-decoration: underline;
+}
+
+.custom-list {
+    list-style: none;
+    padding-left: 200px
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.number {
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 100px;
+}
+
+.content {
+    max-width: 600px;
+}
+
+.title {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
 }
 
 
