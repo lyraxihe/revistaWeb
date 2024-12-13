@@ -9,7 +9,10 @@ $(document).ready(function()
     let menuItems = $("section .menu_flex a");
     menuItems.hover(function()
     {
-        $(this).toggleClass("hover_menuItem");
+        $(this).addClass("hover_menuItem");
+    }, function()
+    {
+        $(this).removeClass("hover_menuItem");
     })
     /* --------------------------------------------------------- */
 
@@ -69,14 +72,14 @@ $(document).ready(function()
     let logInButton = $(".logInButton");
     logInButton.hover(function()
     {
-        suscribeForm[0].reset();
         logInButton.toggleClass("hover_logInButton");
     });
 
-    // Click fuera del formulario
+    // Click outside form
     $(document).click(function(event) {
-        if (!$(event.target).closest(".suscribeForm, .suscribeButton").length) {
+        if (!$(event.target).closest(".suscribeForm, .suscribeButton, .menuButton, #menu").length) {
             $(".suscribeForm").removeClass("showMenuSuscribe");
+            $("#menu .menu_flex").removeClass("showMenuFlex");
         }
     });
     /* --------------------------------------------------------- */
@@ -88,7 +91,8 @@ $(document).ready(function()
 
     menuButton.click(function()
     {
-        menuFlex.toggleClass('showMenuFlex');
+        menuFlex    .toggleClass('showMenuFlex');
+        suscribeForm.removeClass('showMenuSuscribe');
     });
     /* --------------------------------------------------------- */
 
@@ -136,6 +140,24 @@ $(document).ready(function()
         }
 
         $(".contactUs_form")[0].reset();
+    })
+    /* --------------------------------------------------------- */
+    /* ========================================================= */
+
+
+
+    /* ========================================================= */
+    // MAIN (INDEX.HTML)
+
+    /* --------------------------------------------------------- */
+    // sendMessageButton hover
+
+    let slideShowImgs = $(".slideshow img");
+    slideShowImgs.hover(function()
+    {
+        $(this).toggleClass("hoverSlideShowImg");
+        $(this).parent().toggleClass("stopAnimation");
+
     })
     /* --------------------------------------------------------- */
     /* ========================================================= */
